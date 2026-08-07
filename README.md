@@ -17,7 +17,7 @@
 
 A decision taken before signing does not prove what settled. Evidence can be stale, partial,
 unavailable or in conflict at the moment it matters, and the effects a user authorized can differ
-from the effects that landed on chain. Most systems record the signature and stop there.
+from the effects that landed on chain — and the comparison is often nobody's job.
 
 Ryntra Guard checks a supported programmable-money intent against available evidence and a declared
 policy **before** wallet authorization, tracks its Arc Testnet settlement, compares expected and
