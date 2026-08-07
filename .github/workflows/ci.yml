@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# A second push to the same branch cancels the first: the only run whose result
+# matters is the one for the current head.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # `npm ci` rather than `npm install`, so the lockfile is what is tested.
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      # 73 tests. Four Postgres tests skip without DATABASE_URL and are meant
+      # to — they exercise the multi-writer adapter against a live database,
+      # and a faked pass there would be worse than a visible skip.
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      # The whole argument of this project is that its surfaces agree with its
+      # evidence. A forbidden claim reaching main is therefore a build failure,
+      # not a review comment.
+      - name: Forbidden claims
+        run: |
+          if grep -rniE 'first-ever|no competitors|guaranteed safe|institutional-grade|fully compliant|official (arc|circle) partner|mainnet live|production-ready' \
+               --include='*.ts' --include='*.tsx' --include='*.md' \
+               app lib docs README.md \
+             | grep -vE 'is not|are not|never|does not|no security audit|not claimed|forbidden'; then
+            echo "::error::An unsupported claim reached the tree. Every match must be a negation."
+            exit 1
+          fi
+          echo "No unsupported claims."
+
+      - name: No committed secrets
+        run: |
+          if git ls-files | grep -E '(^|/)(\.env$|\.env\.local|\.vercel/)'; then
+            echo "::error::An environment or deployment file is tracked."
+            exit 1
+          fi
+          if grep -rlE 'BEGIN [A-Z ]*PRIVATE KEY|sk-[A-Za-z0-9]{20}' $(git ls-files) 2>/dev/null; then
+            echo "::error::A credential pattern is present in a tracked file."
+            exit 1
+          fi
+          echo "No tracked secrets."
