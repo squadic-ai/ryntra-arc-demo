@@ -242,5 +242,8 @@ say that you would like a private channel.
 
 ## License
 
-**Not yet selected.** No license file ships with this repository, so default copyright applies and
-no permission to reuse is granted yet. A license will be added by the project owner.
+MIT — see [LICENSE](LICENSE).
+
+The license covers the code in this repository. It grants no right to the Ryntra name or marks, and
+it is not a warranty: read the Limitations section above, which is the accurate description of what
+this software has and has not been proven to do.
