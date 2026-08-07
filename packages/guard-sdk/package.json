@@ -1,0 +1,12 @@
+{
+  "name": "@ryntra/sdk",
+  "version": "0.1.0-hackathon",
+  "private": true,
+  "type": "module",
+  "description": "Private headless client for the Ryntra Guard Decision & Settlement Evidence prototype.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "types": "./src/index.ts",
+  "sideEffects": false
+}

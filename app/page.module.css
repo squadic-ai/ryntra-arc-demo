@@ -1,0 +1,279 @@
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.hero {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 48px;
+}
+
+.rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.railItem,
+.claim {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 4px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  color: var(--text-dim);
+}
+
+.railItem {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.claim {
+  background: var(--warning-soft);
+  border-color: transparent;
+  color: var(--warning);
+}
+
+.title {
+  font-family: var(--font-space-grotesk);
+  font-size: clamp(32px, 6vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.descriptor {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  margin: 10px 0 28px;
+}
+
+.lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0 0 24px;
+  max-width: 66ch;
+}
+
+.status {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--success);
+  border-left: 2px solid var(--success);
+  padding-left: 12px;
+  margin: 0 0 28px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.primary,
+.secondary {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 18px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  border: 1px solid var(--border-strong);
+}
+
+.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.secondary {
+  color: var(--text);
+  background: transparent;
+}
+
+.secondary:hover,
+.primary:hover {
+  border-color: var(--accent);
+}
+
+/* --------------------------------------------------------------- sections */
+
+.section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.h2 {
+  font-family: var(--font-space-grotesk);
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+.body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 14px;
+  max-width: 72ch;
+}
+
+/* ------------------------------------------------------------------- flow */
+
+.flow {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.step {
+  background: var(--panel);
+  padding: 18px 20px;
+}
+
+.stepIndex {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.stepTitle {
+  font-size: 15px;
+  margin: 4px 0 6px;
+}
+
+.stepBody {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0;
+  max-width: 72ch;
+}
+
+/* ------------------------------------------------------------------ proof */
+
+.proof {
+  margin: 24px 0 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.proofRow {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  gap: 20px;
+  padding: 14px 20px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+
+.proofRow:last-child {
+  border-bottom: none;
+}
+
+.proofKey {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.proofValue,
+.proofPending {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.65;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.proofValue {
+  color: var(--text);
+}
+
+.proofPending {
+  color: var(--warning);
+}
+
+/* ------------------------------------------------------------------ cards */
+
+.cards {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  padding: 18px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+.cardBody {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------------- limits */
+
+.limits {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 74ch;
+}
+
+/* ----------------------------------------------------------------- footer */
+
+.footer {
+  padding-top: 32px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-faint);
+}
+
+@media (max-width: 620px) {
+  .page {
+    padding: 40px 18px 72px;
+  }
+
+  .proofRow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

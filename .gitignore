@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+build/
+
+# Real configuration. `.env.example` is the only environment file that ships.
+.env
+.env.*
+!.env.example
+
+# Local lifecycle persistence for RYNTRA_GUARD_STORE=file. It holds real
+# intents, authorizations, executions and receipts from local runs.
+.guard-store/
+
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+.DS_Store
+Thumbs.db

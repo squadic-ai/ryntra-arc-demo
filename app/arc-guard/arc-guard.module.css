@@ -1,0 +1,274 @@
+.shell {
+  min-height: 100dvh;
+  background:
+    radial-gradient(circle at 72% 4%, rgba(34, 211, 238, 0.08), transparent 27rem),
+    radial-gradient(circle at 12% 15%, rgba(139, 92, 246, 0.08), transparent 25rem),
+    #0b1020;
+  color: #f8fafc;
+  font-family: var(--font);
+}
+
+.shell :where(button, input, a):focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 3px;
+}
+
+.header {
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 0 28px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(11, 16, 32, 0.86);
+  backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand { font-weight: 850; letter-spacing: 0.16em; font-size: 18px; width: fit-content; }
+.brand span { color: #22d3ee; }
+.productName { color: #cbd5e1; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+.backLink { justify-self: end; display: inline-flex; align-items: center; gap: 7px; color: #94a3b8; font-size: 13px; }
+.backLink:hover { color: #f8fafc; }
+
+.main { width: min(1440px, calc(100% - 48px)); margin: 0 auto; padding: 18px 0 34px; }
+.statusRail { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; padding: 9px 14px; border: 1px solid rgba(148, 163, 184, 0.14); background: rgba(15, 23, 42, 0.72); color: #94a3b8; font: 650 10px/1.4 var(--mono); letter-spacing: 0.08em; }
+.statusRail span::before { content: "•"; margin-right: 8px; color: #475569; }
+.statusRail span:first-child::before { display: none; }
+.statusRail .cyan { color: #67e8f9; }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 44px; align-items: end; padding: 54px 4px 34px; }
+.eyebrow, .panelHead p, .devHeader p { color: #67e8f9; font: 650 10px/1.4 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+.hero h1 { max-width: 860px; margin-top: 12px; font: 650 clamp(34px, 5vw, 68px)/0.98 var(--font-space-grotesk), var(--font); letter-spacing: -0.055em; }
+.lead { max-width: 720px; margin-top: 20px; color: #aebbd0; font-size: 16px; line-height: 1.7; }
+.capabilityCard { border-left: 2px solid #22d3ee; padding: 4px 0 4px 20px; }
+.capabilityLabel { color: #64748b; font: 600 10px var(--mono); letter-spacing: 0.1em; }
+.capabilityCard strong { display: block; margin: 8px 0 6px; color: #f59e0b; font: 700 14px var(--mono); }
+.capabilityCard p { color: #94a3b8; font-size: 12.5px; line-height: 1.6; }
+
+.steps { display: grid; grid-template-columns: repeat(6, 1fr); list-style: none; border: 1px solid rgba(148, 163, 184, 0.16); background: #0f172a; overflow: hidden; }
+.steps li { display: flex; align-items: center; gap: 8px; min-width: 0; padding: 12px 16px; border-right: 1px solid rgba(148, 163, 184, 0.14); color: #64748b; font: 650 10px var(--mono); letter-spacing: 0.08em; }
+.steps li:last-child { border-right: 0; }
+.steps li span { color: #475569; }
+.steps .stepDone { color: #86efac; background: rgba(34, 197, 94, 0.06); }
+
+.workspace { display: grid; grid-template-columns: minmax(225px, 0.8fr) minmax(420px, 1.45fr) minmax(310px, 1fr); gap: 12px; margin-top: 12px; }
+.workflowPanel, .intentPanel, .guardPanel, .developerPanel, .receiptPanel { border: 1px solid rgba(148, 163, 184, 0.16); background: rgba(17, 24, 39, 0.91); box-shadow: 0 18px 48px rgba(0,0,0,0.18); }
+.workflowPanel, .intentPanel, .guardPanel, .receiptPanel { padding: 20px; }
+.panelHead, .devHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; color: #94a3b8; }
+.panelHead h2, .devHeader h2 { margin-top: 4px; color: #f8fafc; font-size: 16px; letter-spacing: -0.02em; }
+.testnetBadge { border: 1px solid rgba(34, 211, 238, 0.28); padding: 5px 8px; color: #67e8f9; background: rgba(34, 211, 238, 0.07); font: 650 9px var(--mono); letter-spacing: 0.08em; }
+
+.walletBox { margin: 22px 0 12px; padding: 14px; border: 1px solid rgba(148, 163, 184, 0.14); background: #0f1626; }
+.walletBox span, .formGrid label > span, .metric span, .outcome span { display: block; color: #64748b; font: 600 9px var(--mono); letter-spacing: 0.09em; }
+.walletBox strong { display: block; margin: 6px 0 3px; color: #e2e8f0; font-size: 13px; }
+.walletBox small, .formGrid small { color: #64748b; font-size: 10.5px; }
+.mono { font-family: var(--mono); }
+
+.primaryButton, .authorizeButton, .walletButton { width: 100%; min-height: 43px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; font: 700 12px var(--font); cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+.primaryButton { background: #22d3ee; color: #06121e; }
+.primaryButton:hover:not(:disabled) { background: #67e8f9; transform: translateY(-1px); }
+.primaryButton:disabled, .authorizeButton:disabled, .walletButton:disabled { cursor: not-allowed; opacity: .46; }
+.networkOk { min-height: 43px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #86efac; border: 1px solid rgba(34,197,94,.2); background: rgba(34,197,94,.06); font-size: 12px; font-weight: 650; }
+.boundaryNote { display: flex; gap: 10px; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(148, 163, 184, 0.14); color: #64748b; }
+.boundaryNote svg { flex: 0 0 auto; color: #8b5cf6; }
+.boundaryNote p { font-size: 10.5px; line-height: 1.55; }
+.boundaryNote strong { display: block; color: #cbd5e1; margin-bottom: 2px; }
+.flowSwitch { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 18px; padding: 4px; border: 1px solid rgba(148, 163, 184, 0.16); background: #0b1020; }
+.flowSwitch button { min-height: 34px; padding: 7px 10px; border: 1px solid transparent; background: transparent; color: #64748b; font: 650 9px var(--mono); letter-spacing: .06em; cursor: pointer; }
+.flowSwitch button[aria-pressed="true"] { border-color: rgba(34, 211, 238, .3); background: rgba(34, 211, 238, .08); color: #67e8f9; }
+.flowSwitch button:disabled { cursor: not-allowed; opacity: .5; }
+
+
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0 14px; }
+.inputWrap { display: flex; align-items: center; margin-top: 6px; border: 1px solid rgba(148, 163, 184, 0.2); background: #0b1020; }
+.inputWrap:focus-within { border-color: rgba(34,211,238,.6); }
+.inputWrap input { min-width: 0; width: 100%; padding: 13px 12px; border: 0; outline: 0; background: transparent; color: #f8fafc; font: 650 17px var(--mono); }
+.inputWrap b { padding: 0 12px; color: #67e8f9; font: 650 10px var(--mono); }
+.formGrid small { display: block; margin-top: 5px; }
+.estimateGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 18px; background: rgba(148, 163, 184, 0.14); border: 1px solid rgba(148, 163, 184, 0.14); }
+.metric { min-width: 0; min-height: 70px; padding: 12px; background: #0f1626; }
+.metric strong { display: block; margin-top: 8px; overflow: hidden; text-overflow: ellipsis; color: #e2e8f0; font: 620 11.5px var(--mono); white-space: nowrap; }
+.routeDisclosure { margin-top: 12px; color: #64748b; font-size: 10.5px; line-height: 1.5; }
+
+.outcome { margin: 22px 0 12px; padding: 14px; border-left: 2px solid #475569; background: #0f1626; }
+.outcome strong { display: block; margin-top: 6px; font: 700 12px var(--mono); overflow-wrap: anywhere; }
+.waiting strong { color: #94a3b8; }
+.pass { border-color: #22c55e; background: rgba(34,197,94,.06); }
+.pass strong { color: #86efac; }
+.review { border-color: #f59e0b; background: rgba(245,158,11,.07); }
+.review strong { color: #fbbf24; }
+.block { border-color: #ef4444; background: rgba(239,68,68,.07); }
+.block strong { color: #fca5a5; }
+.axisGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-bottom: 12px; background: rgba(148,163,184,.12); border: 1px solid rgba(148,163,184,.12); }
+.axisGrid span { min-width: 0; padding: 9px; background: #0f1626; }
+.axisGrid small { display: block; color: #64748b; font: 600 8px var(--mono); letter-spacing: .08em; }
+.axisGrid b { display: block; margin-top: 5px; color: #cbd5e1; font: 650 8px var(--mono); overflow-wrap: anywhere; }
+.checks { list-style: none; display: grid; }
+.checks li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.1); }
+.checks li span { display: flex; align-items: center; gap: 7px; color: #aab7ca; font-size: 10.5px; }
+.checks li span svg { color: #64748b; flex: 0 0 auto; }
+.checks li b { color: #64748b; font: 650 9px var(--mono); }
+.checks li b[data-status="PASS"] { color: #86efac; }
+.checks li b[data-status="REVIEW"], .checks li b[data-status="EXPIRED"] { color: #fbbf24; }
+.checks li b[data-status="BLOCK"], .checks li b[data-status="MISSING"] { color: #fca5a5; }
+.authorizeButton { margin-top: 14px; background: #8b5cf6; color: white; }
+.authorizeButton:hover:not(:disabled) { background: #a78bfa; }
+.walletButton { margin-top: 8px; color: #94a3b8; border-color: rgba(148,163,184,.18); background: transparent; }
+.authNote { margin-top: 9px; color: #64748b; font-size: 9.5px; line-height: 1.5; }
+
+.liveMessage { min-height: 46px; display: flex; align-items: center; margin: 12px 0; padding: 10px 14px; border: 1px solid rgba(148, 163, 184, 0.14); background: rgba(15, 23, 42, .76); color: #94a3b8; font-size: 11px; }
+.liveMessage span { display: flex; align-items: center; gap: 8px; }
+.liveMessage .error { color: #fca5a5; }
+
+.evidenceRow { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(310px, .85fr); gap: 12px; }
+.developerPanel { min-width: 0; }
+.devHeader { padding: 18px 20px 12px; border-bottom: 1px solid rgba(148,163,184,.14); }
+.tabs { display: flex; gap: 4px; }
+.tabs button { padding: 6px 9px; border: 1px solid transparent; background: transparent; color: #64748b; font: 650 9px var(--mono); cursor: pointer; }
+.tabs button[aria-selected="true"] { border-color: rgba(34,211,238,.25); color: #67e8f9; background: rgba(34,211,238,.06); }
+.codeWrap { position: relative; min-height: 190px; padding: 20px; background: #090e1a; overflow: auto; }
+.codeWrap pre { color: #a5f3fc; font: 500 11px/1.7 var(--mono); white-space: pre-wrap; }
+.codeWrap > button { position: absolute; top: 12px; right: 12px; display: flex; gap: 6px; align-items: center; padding: 6px 9px; border: 1px solid rgba(148,163,184,.18); color: #94a3b8; background: #111827; font-size: 10px; cursor: pointer; }
+.receiptPanel dl { margin-top: 18px; }
+.receiptPanel dl div { display: grid; grid-template-columns: 90px minmax(0,1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(148,163,184,.1); }
+.receiptPanel dt { color: #64748b; font-size: 10px; }
+.receiptPanel dd { color: #cbd5e1; font-size: 10px; overflow-wrap: anywhere; }
+.receiptBlocker { margin-top: 15px; padding: 11px; color: #fbbf24; background: rgba(245,158,11,.06); border: 1px solid rgba(245,158,11,.18); font-size: 10px; line-height: 1.5; }
+.explorerLink { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: #67e8f9; font-size: 11px; }
+.receiptSuccess { margin-top: 15px; padding: 11px; color: #86efac; background: rgba(34,197,94,.06); border: 1px solid rgba(34,197,94,.2); font-size: 10px; line-height: 1.5; }
+.footer { display: flex; justify-content: space-between; gap: 20px; padding: 20px 4px 0; color: #64748b; font-size: 10px; }
+.footer span { display: inline-flex; align-items: center; gap: 7px; }
+
+@media (max-width: 1100px) {
+  .workspace { grid-template-columns: 1fr 1.6fr; }
+  .guardPanel { grid-column: 1 / -1; }
+  .checks { grid-template-columns: 1fr 1fr; column-gap: 24px; }
+}
+
+@media (max-width: 760px) {
+  .header { grid-template-columns: 1fr auto; padding: 0 18px; }
+  .productName { display: none; }
+  .main { width: min(100% - 24px, 680px); padding-top: 12px; }
+  .statusRail { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; white-space: nowrap; }
+  .hero { grid-template-columns: 1fr; gap: 22px; padding: 38px 2px 28px; }
+  .hero h1 { font-size: clamp(34px, 11vw, 52px); }
+  .steps { display: flex; overflow-x: auto; }
+  .steps li { min-width: 118px; }
+  .workspace, .evidenceRow { grid-template-columns: 1fr; }
+  .guardPanel { grid-column: auto; }
+  .checks { grid-template-columns: 1fr; }
+  .formGrid, .estimateGrid { grid-template-columns: 1fr 1fr; }
+  .devHeader { display: grid; }
+  .tabs { overflow-x: auto; }
+  .footer { flex-direction: column; }
+}
+
+@media (max-width: 430px) {
+  .backLink { font-size: 0; }
+  .backLink svg { width: 18px; height: 18px; }
+  .hero h1 { font-size: 38px; }
+  .formGrid, .estimateGrid { grid-template-columns: 1fr; }
+  .flowSwitch, .axisGrid { grid-template-columns: 1fr; }
+  .workflowPanel, .intentPanel, .guardPanel, .receiptPanel { padding: 16px; }
+  .devHeader { padding: 16px; }
+  .codeWrap { padding: 18px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton, .authorizeButton { transition: none; }
+}
+
+/*
+ * Embedded mode — the operation rendered inside the Arc Workspace shell.
+ *
+ * The workspace already provides the page frame, the network context and the
+ * limitation labels, so embedded mode drops the standalone chrome and keeps
+ * only the work: intent, evidence, policy, authorization, execution, receipt.
+ */
+.embedded {
+  display: block;
+  background: transparent;
+  min-height: 0;
+}
+
+.mainEmbedded {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Without the developer panel beside it, the receipt takes the full width
+   rather than leaving an empty column where the code used to be. */
+.evidenceRowEmbedded {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+/* Container for the six operation states inside the readiness panel. */
+.lifecycleBlock {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/*
+ * Recovery notice for an unreconciled execution.
+ *
+ * Deliberately loud. Every other state on this screen can be left alone; this
+ * one means a real transaction exists on Arc and nobody has read its result.
+ * It is warning-coloured rather than danger-coloured because nothing is broken
+ * — the money moved as authorized — but the record is incomplete, and an
+ * incomplete record is the failure this whole system exists to prevent.
+ */
+.recoveryNotice {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-sm);
+  background: var(--warning-soft);
+  color: var(--text);
+  align-items: flex-start;
+}
+
+.recoveryNotice > svg {
+  flex: none;
+  color: var(--warning);
+  margin-top: 1px;
+}
+
+.recoveryNotice strong {
+  display: block;
+  font-size: 13.5px;
+  margin-bottom: 5px;
+}
+
+.recoveryNotice p {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.recoveryNotice p:last-child {
+  margin-bottom: 0;
+}
+
+.recoveryNotice code {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+
+.recoveryNotice a {
+  color: var(--accent);
+}
